@@ -10,6 +10,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { AppWrapper } from "./component/appwrapper";
 
 //create your first component
 const Layout = () => {
@@ -20,7 +21,7 @@ const Layout = () => {
     if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
 
     return (
-        <div>
+        <AppWrapper>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
                     <Navbar />
@@ -33,7 +34,7 @@ const Layout = () => {
                     <Footer />
                 </ScrollToTop>
             </BrowserRouter>
-        </div>
+        </AppWrapper>
     );
 };
 
